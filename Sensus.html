@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Sensus Penduduk</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+  <nav class="bg-green-700 p-4 text-white">
+    <a href="index.html">← Kembali</a>
+  </nav>
+
+  <section class="p-6">
+    <h1 class="text-2xl font-bold mb-4">Data Sensus Penduduk</h1>
+
+    <canvas id="chartPenduduk" width="400" height="200"></canvas>
+  </section>
+
+  <script>
+    const ctx = document.getElementById('chartPenduduk').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Anak-anak', 'Dewasa', 'Lansia'],
+        datasets: [{
+          label: 'Jumlah Penduduk',
+          data: [120, 340, 80],
+          backgroundColor: ['#38a169', '#2b6cb0', '#c53030']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
