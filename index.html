@@ -11,8 +11,8 @@
   <!-- Navbar -->
   <nav class="bg-green-700 p-4 text-white flex justify-between">
     <h1 class="font-bold text-xl">Dusun Tegal Sempu</h1>
-    <div id="navbar-links">
-      <a href="index.html" class="mx-2">Beranda</a>
+    <div>
+      <span class="mx-2 font cursor-default opacity-70">Beranda</span>
       <a href="Profil.html" class="mx-2">Profil</a>
       <a href="Sensus.html" class="mx-2">Sensus</a>
       <a href="Dokumentasi.html" class="mx-2">Dokumentasi</a>
@@ -26,17 +26,6 @@
     <p class="text-lg mb-6">Dusun Tegal Sempu, Desa Caturharjo, Kecamatan Pandak</p>
     <img src="Assets/gambar.jpg" alt="Gambar Desa" class="mx-auto rounded-lg shadow-lg w-full max-w-2xl">
   </section>
-
-  <script>
-    const currentPage = window.location.pathname.split("/").pop().toLowerCase();
-    
-    document.querySelectorAll('#navbar-links a').forEach(link => {
-      if (link.getAttribute('href').toLowerCase() === currentPage) {
-        link.classList.add('font-bold', 'cursor-default', 'opacity-70');
-        link.removeAttribute('href');
-      }
-    });
-  </script>
 
 </body>
 </html>
