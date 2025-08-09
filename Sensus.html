@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -6,16 +6,22 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 flex flex-col min-h-screen">
+  <!-- Navbar -->
   <nav class="bg-green-700 p-4 text-white">
     <a href="index.html">← Kembali</a>
   </nav>
 
-  <section class="p-6">
+  <!-- Konten -->
+  <section class="p-6 flex-grow">
     <h1 class="text-2xl font-bold mb-4">Data Sensus Penduduk</h1>
-
     <canvas id="chartPenduduk" width="400" height="200"></canvas>
   </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white p-4 text-center mt-auto">
+    <p>&copy; 2025 Dusun Tegal Sempu</p>
+  </footer>
 
   <script>
     const ctx = document.getElementById('chartPenduduk').getContext('2d');
@@ -31,12 +37,5 @@
       }
     });
   </script>
-   <!-- Footer -->
-  <footer class="bg-green-700 text-white mt-6 p-4 text-center">
-    <p>&copy; 2025 Dusun Tegal Sempu</p>
-  </footer>
 </body>
 </html>
-
-
-
