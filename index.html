@@ -11,7 +11,7 @@
   <!-- Navbar -->
   <nav class="bg-green-700 p-4 text-white flex justify-between items-center relative z-50">
     <a href="index.html" class="font-bold text-lg">Dusun Tegalsempu</a>
-    <div class="space-x-4 flex items-center">
+    <div class="space-x-4 flex items-center flex-wrap">
 
       <a href="index.html" class="hover:underline">Beranda</a>
       <a href="Profil.html" class="hover:underline">Profil</a>
@@ -19,11 +19,11 @@
       <a href="Dokumentasi.html" class="hover:underline">Dokumentasi</a>
 
       <!-- Dropdown Program -->
-      <div class="relative group">
-        <button class="hover:underline focus:outline-none">
-          Program ▼
+      <div class="relative">
+        <button id="programBtn" class="hover:underline focus:outline-none flex items-center">
+          Program <span class="ml-1">▼</span>
         </button>
-        <div class="absolute hidden group-hover:block bg-white text-black mt-2 rounded-lg shadow-lg w-48 z-50">
+        <div id="programMenu" class="absolute right-0 bg-white text-black mt-2 rounded-lg shadow-lg w-48 hidden">
           <a href="#" class="block px-4 py-2 hover:bg-green-100">Pembangunan</a>
           <a href="#" class="block px-4 py-2 hover:bg-green-100">Pemberdayaan</a>
           <a href="#" class="block px-4 py-2 hover:bg-green-100">Pelayanan</a>
@@ -47,6 +47,22 @@
       <p class="text-lg drop-shadow-md">Dusun Tegalsempu, Desa Caturharjo, Kecamatan Pandak</p>
     </div>
   </section>
+
+  <script>
+    const btn = document.getElementById('programBtn');
+    const menu = document.getElementById('programMenu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Klik di luar untuk menutup menu
+    window.addEventListener('click', (e) => {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+  </script>
 
 </body>
 </html>
