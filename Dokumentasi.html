@@ -14,41 +14,41 @@
       <a href="index.html" class="hover:underline">Beranda</a>
       <a href="Profil.html" class="hover:underline">Profil</a>
       <a href="Sensus.html" class="hover:underline">Sensus</a>
-      <a href="Dokumentasi.html" class="hover:underline">Dokumentasi</a>
+      <a href="Dokumentasi.php" class="hover:underline">Dokumentasi</a>
     </div>
   </nav>
 
-  <!-- Konten utama -->
+  <!-- Form Upload -->
   <main class="flex-1 p-6">
     <h1 class="text-2xl font-bold mb-6">Dokumentasi Kegiatan</h1>
 
+    <form action="upload.php" method="POST" enctype="multipart/form-data" class="mb-6 bg-white p-4 rounded-lg shadow-md">
+      <label class="block mb-2 font-semibold">Pilih Gambar:</label>
+      <input type="file" name="gambar" required class="mb-4 border p-2 w-full">
+      <label class="block mb-2 font-semibold">Judul:</label>
+      <input type="text" name="judul" required class="mb-4 border p-2 w-full">
+      <label class="block mb-2 font-semibold">Tanggal:</label>
+      <input type="date" name="tanggal" required class="mb-4 border p-2 w-full">
+      <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800">Upload</button>
+    </form>
+
+    <!-- Galeri Dokumentasi -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Card 1 -->
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-        <img src="Assets/kegiatan1.jpg" alt="Rapat Agustusan" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h2 class="font-semibold text-lg mb-2">Rapat Agustusan</h2>
-          <p class="text-gray-600 text-sm">6 Agustus 2025</p>
+      <?php
+      $files = array_diff(scandir("uploads"), array('.', '..'));
+      foreach ($files as $file) {
+        $data = json_decode(file_get_contents("uploads/$file/info.json"), true);
+        echo "
+        <div class='bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition'>
+          <img src='uploads/$file' class='w-full h-48 object-cover'>
+          <div class='p-4'>
+            <h2 class='font-semibold text-lg mb-2'>{$data['judul']}</h2>
+            <p class='text-gray-600 text-sm'>{$data['tanggal']}</p>
+          </div>
         </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-        <img src="Assets/kegiatan2.jpg" alt="Pengajaran di TPA" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h2 class="font-semibold text-lg mb-2">Pengajaran di TPA</h2>
-          <p class="text-gray-600 text-sm">9 Agustus 2025</p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-        <img src="Assets/kegiatan3.jpg" alt="Lomba Voli Agustusan" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h2 class="font-semibold text-lg mb-2">Lomba Voli Agustusan</h2>
-          <p class="text-gray-600 text-sm">9 Agustus 2025</p>
-        </div>
-      </div>
+        ";
+      }
+      ?>
     </div>
   </main>
 
@@ -56,6 +56,6 @@
   <footer class="bg-green-700 text-white p-4 text-center">
     <p>&copy; 2025 Dusun Tegalsempu</p>
   </footer>
+
 </body>
 </html>
-
