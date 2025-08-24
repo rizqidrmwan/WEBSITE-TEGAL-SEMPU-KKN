@@ -9,15 +9,8 @@
 <body class="bg-gray-100 font-sans">
 
   <!-- Navbar -->
-  <nav class="bg-green-700 p-4 text-white flex justify-between items-center relative z-50">
-    
-    <!-- Logo + Nama Padukuhan -->
-    <a href="index.html" class="flex items-center space-x-2">
-      <img src="Assets/lambang.png" alt="Lambang Padukuhan" class="h-20 w-20 object-contain"> 
-      <span class="font-bold text-lg">Padukuhan Tegalsempu</span>
-    </a>
-
-    <!-- Menu -->
+  <nav class="bg-green-700 p-4 text-white flex justify-between items-center sticky top-0 z-50">
+    <a href="index.html" class="font-bold text-lg">Padukuhan Tegalsempu</a>
     <div class="space-x-4 flex items-center flex-wrap">
       <a href="index.html" class="hover:underline">Beranda</a>
       <a href="Profil.html" class="hover:underline">Profil</a>
@@ -26,10 +19,10 @@
 
       <!-- Dropdown Program -->
       <div class="relative">
-        <button id="programBtn" class="hover:underline focus:outline-none flex items-center">
+        <button id="programBtn" class="hover:underline focus:outline-none flex items-center cursor-pointer">
           Program
         </button>
-        <div id="programMenu" class="absolute right-0 bg-white text-black mt-2 rounded-lg shadow-lg w-48 hidden">
+        <div id="programMenu" class="absolute right-0 bg-white text-black mt-2 rounded-lg shadow-lg w-48 hidden z-50">
           <a href="pembangunan.html" class="block px-4 py-2 hover:bg-green-100">Pembangunan</a>
           <a href="pemberdayaan.html" class="block px-4 py-2 hover:bg-green-100">Pemberdayaan</a>
           <a href="pelayanan.html" class="block px-4 py-2 hover:bg-green-100">Pelayanan</a>
@@ -53,6 +46,7 @@
     </div>
   </section>
 
+  <!-- Script -->
   <script>
     const btn = document.getElementById('programBtn');
     const menu = document.getElementById('programMenu');
@@ -71,4 +65,3 @@
 
 </body>
 </html>
-
