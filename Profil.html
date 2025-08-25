@@ -165,8 +165,34 @@
       <p><b>KKN Reguler 145 UAD Unit V.D.2</b></p>
     </div>
   </footer>
+      // Language Toggle
+    const langToggle = document.getElementById("langToggle");
+    let currentLang = "id";
+    langToggle.addEventListener("click", () => {
+      currentLang = currentLang === "id" ? "en" : "id";
+      for (const key in langData[currentLang]) {
+        const el = document.getElementById(key);
+        if (el) el.innerHTML = langData[currentLang][key];
+      }
+      langToggle.innerText = currentLang === "id" ? "EN" : "ID";
+    });
+
+    // Night Mode Toggle
+    const modeToggle = document.getElementById("modeToggle");
+    const body = document.getElementById("body");
+    modeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      if (body.classList.contains("dark")) {
+        modeToggle.innerText = "☀️";
+        body.classList.replace("bg-gray-100", "bg-gray-900");
+      } else {
+        modeToggle.innerText = "🌙";
+        body.classList.replace("bg-gray-900", "bg-gray-100");
+      }
+    });
 </body>
 </html>
+
 
 
 
