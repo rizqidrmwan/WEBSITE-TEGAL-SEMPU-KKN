@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Padukuhan Tegalsempu</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Aktifkan dark mode via class
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
 </head>
 <body class="bg-gray-100 font-sans transition-colors duration-500" id="body">
 
@@ -31,7 +37,7 @@
   <section class="relative">
     <img src="Assets/gambar.jpg" alt="Gambar Desa" class="w-full h-[700px] object-cover">
     <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40 flex flex-col items-center justify-center text-white text-center px-6 space-y-2">
-      <img src="Assets/lambang.png" alt="Lambang" class="h-110 w-80 shadow-lg">
+      <img src="Assets/lambang.png" alt="Lambang" class="h-40 w-40 shadow-lg">
       <h2 class="text-5xl font-extrabold drop-shadow-lg" id="hero-title">Selamat Datang di Website Resmi</h2>
       <p class="text-lg drop-shadow-md" id="hero-subtitle">Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak</p>
     </div>
@@ -96,15 +102,6 @@
 
   <!-- Script -->
   <script>
-    // Toggle Program Menu
-    const btn = document.getElementById('programBtn');
-    const menu = document.getElementById('programMenu');
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      menu.classList.toggle('hidden');
-    });
-    window.addEventListener('click', () => menu.classList.add('hidden'));
-
     // Language Data
     const langData = {
       id: {
@@ -124,7 +121,7 @@
         "footer-title": "PADUKUHAN TEGALSEMPU",
         "footer-desc": "Website Resmi Pemerintah Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul",
         "footer-contact": "HUBUNGI KAMI",
-        "footer-address": "Jl. Kayumas No. 005 Kp. Krajan RT 03 RW 03 Ketowan,<br>Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul<br>Provinsi Daerah Istimewa Yogyakarta, Indonesia, 55761."
+        "footer-address": "Jl. Tegalsempu,<br>Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul<br>Provinsi Daerah Istimewa Yogyakarta, Indonesia, 55761."
       },
       en: {
         "nav-home": "Home",
@@ -143,7 +140,7 @@
         "footer-title": "TEGALSEMPU HAMLET",
         "footer-desc": "Official Website of Tegalsempu Hamlet, Caturharjo Village, Pandak District, Bantul Regency",
         "footer-contact": "CONTACT US",
-        "footer-address": "Jl. Kayumas No. 005 Kp. Krajan RT 03 RW 03 Ketowan,<br>Tegalsempu Hamlet, Caturharjo Village, Pandak District, Bantul Regency<br>Special Region of Yogyakarta, Indonesia, 55761."
+        "footer-address": "Jl. Tegalsempu,<br>Tegalsempu Hamlet, Caturharjo Village, Pandak District, Bantul Regency<br>Special Region of Yogyakarta, Indonesia, 55761."
       }
     };
 
@@ -159,22 +156,17 @@
       langToggle.innerText = currentLang === "id" ? "EN" : "ID";
     });
 
-    // Night Mode Toggle
+    // Dark Mode Toggle
     const modeToggle = document.getElementById("modeToggle");
-    const body = document.getElementById("body");
+    const html = document.documentElement;
     modeToggle.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      if (body.classList.contains("dark")) {
+      html.classList.toggle("dark");
+      if (html.classList.contains("dark")) {
         modeToggle.innerText = "☀️";
-        body.classList.replace("bg-gray-100", "bg-gray-900");
       } else {
         modeToggle.innerText = "🌙";
-        body.classList.replace("bg-gray-900", "bg-gray-100");
       }
     });
   </script>
 </body>
 </html>
-
-
-
