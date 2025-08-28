@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -6,9 +6,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen">
+<body class="bg-gray-100 text-black flex flex-col min-h-screen transition-colors duration-500" id="body">
    <!-- Navbar -->
-  <nav class="bg-green-700 p-4 text-white flex justify-between items-center sticky top-0 z-50 shadow-md">
+  <nav class="bg-green-700 p-4 text-white flex justify-between items-center sticky top-0 z-50 shadow-md" id="navbar">
     <a href="index.html" class="flex items-center space-x-2">
       <img src="Assets/lambang.png" alt="Lambang" class="h-10 w-10 object-contain rounded-full bg-white p-1">
       <span class="font-bold text-lg tracking-wide" id="nav-title">Padukuhan Tegalsempu</span>
@@ -27,12 +27,12 @@
 
   <!-- Konten -->
   <section class="p-6 flex-grow">
-    <h1 class="text-2xl font-bold mb-4">Data Jumlah Penduduk per RT</h1>
+    <h1 class="text-2xl font-bold mb-4" id="page-title">Data Jumlah Penduduk per RT</h1>
     <canvas id="chartPenduduk" width="400" height="200"></canvas>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-green-800 text-white py-10">
+  <footer class="bg-green-800 text-white py-10 transition-colors duration-500" id="footer">
     <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-start gap-6 px-6">
       
       <!-- Kolom Kiri -->
@@ -64,8 +64,9 @@
     </div>
   </footer>
 
-  <!-- Chart JS -->
+  <!-- Script -->
   <script>
+    // ==== Chart ====
     const ctx = document.getElementById('chartPenduduk').getContext('2d');
     const chart = new Chart(ctx, {
       type: 'bar',
@@ -73,21 +74,62 @@
         labels: ['RT 1', 'RT 2', 'RT 3', 'RT 4'],
         datasets: [{
           label: 'Jumlah Penduduk',
-          data: [160, 170, 144, 143], // << contoh data, bisa disesuaikan
+          data: [160, 170, 144, 143],
           backgroundColor: ['#38a169', '#2b6cb0', '#c53030', '#d69e2e']
         }]
       },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: true,
-            position: 'top'
-          }
-        }
+      options: { responsive: true }
+    });
+
+    // ==== Bahasa ====
+    const translations = {
+      id: {
+        home: "Beranda",
+        profile: "Profil",
+        census: "Sensus",
+        docs: "Dokumentasi",
+        title: "Data Jumlah Penduduk per RT",
+        footerContact: "HUBUNGI KAMI",
+        footerDesc: "Website Resmi Pemerintah Padukuhan Tegalsempu,<br>Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul",
+        chartLabel: "Jumlah Penduduk"
+      },
+      en: {
+        home: "Home",
+        profile: "Profile",
+        census: "Census",
+        docs: "Documentation",
+        title: "Population Data per RT",
+        footerContact: "CONTACT US",
+        footerDesc: "Official Website of Tegalsempu Hamlet,<br>Caturharjo Village, Pandak Subdistrict, Bantul Regency",
+        chartLabel: "Total Population"
       }
+    };
+
+    let currentLang = "id";
+    document.getElementById("langToggle").addEventListener("click", () => {
+      currentLang = currentLang === "id" ? "en" : "id";
+      const t = translations[currentLang];
+      document.getElementById("nav-home").innerHTML = t.home;
+      document.getElementById("nav-profile").innerHTML = t.profile;
+      document.getElementById("nav-census").innerHTML = t.census;
+      document.getElementById("nav-docs").innerHTML = t.docs;
+      document.getElementById("page-title").innerHTML = t.title;
+      document.getElementById("footer-contact").innerHTML = t.footerContact;
+      document.getElementById("footer-desc").innerHTML = t.footerDesc;
+      chart.data.datasets[0].label = t.chartLabel;
+      chart.update();
+
+      // ganti teks tombol
+      document.getElementById("langToggle").innerHTML = currentLang === "id" ? "EN" : "ID";
+    });
+
+    // ==== Mode Gelap / Terang ====
+    document.getElementById("modeToggle").addEventListener("click", () => {
+      document.getElementById("body").classList.toggle("bg-gray-900");
+      document.getElementById("body").classList.toggle("text-white");
+      document.getElementById("navbar").classList.toggle("bg-green-900");
+      document.getElementById("footer").classList.toggle("bg-green-900");
     });
   </script>
 </body>
 </html>
-
