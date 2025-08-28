@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Sensus Penduduk</title>
+  <title>Data Sensus per RT</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -27,7 +27,7 @@
 
   <!-- Konten -->
   <section class="p-6 flex-grow">
-    <h1 class="text-2xl font-bold mb-4">Data Sensus Penduduk</h1>
+    <h1 class="text-2xl font-bold mb-4">Data Jumlah Penduduk per RT</h1>
     <canvas id="chartPenduduk" width="400" height="200"></canvas>
   </section>
 
@@ -64,26 +64,29 @@
     </div>
   </footer>
 
+  <!-- Chart JS -->
   <script>
     const ctx = document.getElementById('chartPenduduk').getContext('2d');
     const chart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Anak-anak', 'Dewasa', 'Lansia'],
+        labels: ['RT 1', 'RT 2', 'RT 3', 'RT 4'],
         datasets: [{
           label: 'Jumlah Penduduk',
-          data: [120, 340, 80],
-          backgroundColor: ['#38a169', '#2b6cb0', '#c53030']
+          data: [120, 150, 100, 90], // << contoh data, bisa disesuaikan
+          backgroundColor: ['#38a169', '#2b6cb0', '#c53030', '#d69e2e']
         }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top'
+          }
+        }
       }
     });
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
