@@ -165,6 +165,7 @@
     }
   };
 
+  <script>
   // Toggle Bahasa
   const langToggle = document.getElementById("langToggle");
   let currentLang = "id";
@@ -179,18 +180,19 @@
 
   // Toggle Dark Mode
   const modeToggle = document.getElementById("modeToggle");
-  const body = document.body; // gunakan langsung body
+  const html = document.documentElement; // ganti ke <html>
   modeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark");
-    if (body.classList.contains("dark")) {
+    html.classList.toggle("dark"); // tambahkan ke <html>
+    if (html.classList.contains("dark")) {
       modeToggle.innerText = "☀️";
     } else {
       modeToggle.innerText = "🌙";
     }
   });
-  </script>
+</script>
 </body>
 </html>
+
 
 
 
