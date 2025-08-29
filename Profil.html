@@ -122,7 +122,8 @@
     </div>
   </footer>
 
- <script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
   // Data Bahasa
   const langData = {
     id: {
@@ -131,7 +132,7 @@
       "nav-census": "Sensus",
       "nav-docs": "Dokumentasi",
       "footer-title": "PADUKUHAN TEGALSEMPU",
-      "footer-desc": "Website Resmi Pemerintah Padukuhan Tegalsempu,<br>Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul",
+      "footer-desc": "Website Resmi Pemerintah Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul",
       "footer-contact": "HUBUNGI KAMI",
       "footer-address": "Jl. Tegalsempu,<br>Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul<br>Provinsi DIY, Indonesia, 55761.",
       "visi-title": "Visi",
@@ -165,7 +166,6 @@
     }
   };
 
-  <script>
   // Toggle Bahasa
   const langToggle = document.getElementById("langToggle");
   let currentLang = "id";
@@ -180,18 +180,21 @@
 
   // Toggle Dark Mode
   const modeToggle = document.getElementById("modeToggle");
-  const html = document.documentElement; // ganti ke <html>
+  const html = document.documentElement; // gunakan <html>
   modeToggle.addEventListener("click", () => {
-    html.classList.toggle("dark"); // tambahkan ke <html>
+    html.classList.toggle("dark");
     if (html.classList.contains("dark")) {
       modeToggle.innerText = "☀️";
     } else {
       modeToggle.innerText = "🌙";
     }
   });
+});
 </script>
+
 </body>
 </html>
+
 
 
 
