@@ -1,0 +1,83 @@
+<?php include "koneksi.php"; ?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dokumentasi Kegiatan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+ <!-- Navbar -->
+  <nav class="bg-green-700 p-4 text-white flex justify-between items-center sticky top-0 z-50 shadow-md">
+    <a href="index.html" class="flex items-center space-x-2">
+      <img src="Assets/lambang.png" alt="Lambang" class="h-10 w-10 object-contain rounded-full bg-white p-1">
+      <span class="font-bold text-lg tracking-wide" id="nav-title">Padukuhan Tegalsempu</span>
+    </a>
+    <div class="space-x-6 flex items-center flex-wrap font-medium">
+      <a href="index.html" class="hover:text-yellow-300 transition" id="nav-home">Beranda</a>
+      <a href="Profil.html" class="hover:text-yellow-300 transition" id="nav-profile">Profil</a>
+      <a href="Sensus.html" class="hover:text-yellow-300 transition" id="nav-census">Sensus</a>
+      <a href="Dokumentasi.php" class="hover:text-yellow-300 transition" id="nav-docs">Dokumentasi</a>
+
+      <!-- Tombol Bahasa & Mode -->
+      <button id="langToggle" class="px-3 py-1 bg-yellow-400 text-black rounded-md hover:bg-yellow-500 transition">EN</button>
+      <button id="modeToggle" class="px-3 py-1 bg-gray-800 text-white rounded-md hover:bg-gray-600 transition">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Konten utama -->
+  <main class="flex-1 p-6">
+    <h1 class="text-2xl font-bold mb-6">Dokumentasi Kegiatan</h1>
+
+    <!-- Grid Dokumentasi dari Database -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <?php
+      $result = $conn->query("SELECT * FROM dokumentasi ORDER BY tanggal DESC");
+      while($row = $result->fetch_assoc()):
+      ?>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="uploads/<?= $row['gambar']; ?>" alt="<?= $row['judul']; ?>" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="font-semibold text-lg mb-2"><?= $row['judul']; ?></h2>
+          <p class="text-gray-600 text-sm"><?= date("d M Y", strtotime($row['tanggal'])); ?></p>
+        </div>
+      </div>
+      <?php endwhile; ?>
+    </div>
+  </main>
+
+<!-- Footer -->
+  <footer class="bg-green-800 text-white py-10">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-start gap-6 px-6">
+      
+      <!-- Kolom Kiri -->
+      <div class="flex-1 min-w-[250px] text-center md:text-left">
+        <a href="https://www.youtube.com/@tegalsemputv" target="_blank">
+          <img src="Assets/youtube.png" alt="YouTube" class="w-14 mx-auto md:mx-0 mb-4">
+        </a>
+        <h3 class="text-xl font-bold" id="footer-title">PADUKUHAN TEGALSEMPU</h3>
+        <p class="mt-2 text-sm" id="footer-desc">
+          Website Resmi Pemerintah Padukuhan Tegalsempu,<br>
+          Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul
+        </p>
+      </div>
+
+      <!-- Kolom Kanan -->
+      <div class="flex-1 min-w-[250px]">
+        <h3 class="font-bold text-lg mb-2" id="footer-contact">HUBUNGI KAMI</h3>
+        <p class="text-sm leading-relaxed" id="footer-address">
+          Jl. Kayumas No. 005 Kp. Krajan RT 03 RW 03 Ketowan,<br>
+          Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul<br>
+          Provinsi Daerah Istimewa Yogyakarta, Indonesia, 55761.
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center border-t border-gray-400 mt-6 pt-4 text-sm">
+      <p>&copy; 2025 Padukuhan Tegalsempu. All Rights Reserved.</p>
+      <p><b>KKN Reguler 145 UAD Unit V.D.2</b></p>
+    </div>
+  </footer>
+</body>
+</html>
