@@ -19,6 +19,7 @@
       <a href="Profil.html" class="hover:text-yellow-300 transition" id="nav-profile">Profil</a>
       <a href="Sensus.html" class="hover:text-yellow-300 transition" id="nav-census">Sensus</a>
       <a href="Dokumentasi.php" class="hover:text-yellow-300 transition" id="nav-docs">Dokumentasi</a>
+      <a href="login.php" class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-green-700 transition">+</a>
 
       <!-- Tombol Bahasa & Mode -->
       <button id="langToggle" class="px-3 py-1 bg-yellow-400 text-black rounded-md hover:bg-yellow-500 transition">EN</button>
