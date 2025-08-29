@@ -29,6 +29,27 @@
   <main class="flex-1 p-6">
     <h1 class="text-2xl font-bold mb-6">Dokumentasi Kegiatan</h1>
 
+    <!-- Form Upload -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="font-semibold text-lg mb-4">Upload Dokumentasi Baru</h2>
+      <form action="upload.php" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <div>
+          <label class="block mb-2 text-sm font-medium">Pilih Gambar:</label>
+          <input type="file" name="gambar" required class="border p-2 w-full rounded-md">
+        </div>
+        <div>
+          <label class="block mb-2 text-sm font-medium">Judul:</label>
+          <input type="text" name="judul" placeholder="Judul kegiatan" required class="border p-2 w-full rounded-md">
+        </div>
+        <div>
+          <label class="block mb-2 text-sm font-medium">Tanggal:</label>
+          <input type="date" name="tanggal" required class="border p-2 w-full rounded-md">
+        </div>
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md">Upload</button>
+      </form>
+    </div>
+
+    <!-- Grid Dokumentasi -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Card 1 -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
@@ -91,8 +112,5 @@
       <p><b>KKN Reguler 145 UAD Unit V.D.2</b></p>
     </div>
   </footer>
+</body>
 </html>
-
-
-
-
