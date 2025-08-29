@@ -165,39 +165,33 @@
   }
 };
 
-  // Language Toggle
-  const langToggle = document.getElementById("langToggle");
-  let currentLang = "id";
-  langToggle.addEventListener("click", () => {
-    currentLang = currentLang === "id" ? "en" : "id";
-    for (const key in langData[currentLang]) {
-      const el = document.getElementById(key);
-      if (el) el.innerHTML = langData[currentLang][key];
-    }
-    langToggle.innerText = currentLang === "id" ? "EN" : "ID";
-  });
+ // Toggle Bahasa
+    const langToggle = document.getElementById("langToggle");
+    let currentLang = "id";
+    langToggle.addEventListener("click", () => {
+      currentLang = currentLang === "id" ? "en" : "id";
+      for (const key in langData[currentLang]) {
+        const el = document.getElementById(key);
+        if (el) el.innerHTML = langData[currentLang][key];
+      }
+      langToggle.innerText = currentLang === "id" ? "EN" : "ID";
+    });
 
-  // Dark Mode Toggle (pakai localStorage)
-  const modeToggle = document.getElementById("modeToggle");
-  if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.classList.add("dark");
-    modeToggle.innerText = "☀️";
-  } else {
-    document.documentElement.classList.remove("dark");
-    modeToggle.innerText = "🌙";
-  }
-
-  modeToggle.addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark");
-    if (document.documentElement.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-      modeToggle.innerText = "☀️";
-    } else {
-      localStorage.setItem("theme", "light");
-      modeToggle.innerText = "🌙";
-    }
-  });
+    // Toggle Dark Mode
+    const modeToggle = document.getElementById("modeToggle");
+    const body = document.getElementById("body");
+    modeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      if (body.classList.contains("dark")) {
+        modeToggle.innerText = "☀️";
+        body.classList.replace("bg-gray-100", "bg-gray-900");
+      } else {
+        modeToggle.innerText = "🌙";
+        body.classList.replace("bg-gray-900", "bg-gray-100");
+      }
+    });
   </script>
 </body>
 </html>
+
 
