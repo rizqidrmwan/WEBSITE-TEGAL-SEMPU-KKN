@@ -122,76 +122,75 @@
     </div>
   </footer>
 
-  <script>
+ <script>
   // Data Bahasa
   const langData = {
-  id: {
-    "nav-home": "Beranda",
-    "nav-profile": "Profil",
-    "nav-census": "Sensus",
-    "nav-docs": "Dokumentasi",
-    "footer-title": "PADUKUHAN TEGALSEMPU",
-    "footer-desc": "Website Resmi Pemerintah Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul",
-    "footer-contact": "HUBUNGI KAMI",
-    "footer-address": "Jl. Tegalsempu,<br>Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul<br>Provinsi DIY, Indonesia, 55761."
-    "visi-title": "Visi",
-    "visi-text": "“Terwujudnya masyarakat Tegalsempu yang sehat, tertib,sejahtera, cerdas, berbudaya dan berakhlak mulia”",
-    "misi-title": "Misi",
-    "misi1": "Meningkatkan tingkat kesehatan masyarakat Padukuhan Tegalsempu",
-    "misi2": "Meningkatkan ketertiban dan kepatuhan seluruh warga dan perangkat Padukuhan Tegalsempu terhadap perundang-undangan yang berlaku",
-    "misi3": "Meningkatkan kesejahteraan warga Padukuhan Tegalsempu dengan optimalisasi sentra ekonomi kreatif dan perintisan dukuh wisata",
-    "misi4": "Meningkatkan tingkat pendidikan dan keterampilan warga Padukuhan Tegalsempu",
-    "misi5": "Melestarikan adat, tradisi dan budaya masyarakat Padukuhan Tegalsempu",
-    "misi6": "Meningkatkan iman dan taqwa warga Padukuhan Tegalsempu"
-  },
-  en: {
-    "nav-home": "Home",
-    "nav-profile": "Profile",
-    "nav-census": "Census",
-    "nav-docs": "Documentation",
-    "footer-title": "TEGALSEMPU HAMLET",
-    "footer-desc": "Official Website of Tegalsempu Hamlet,<br> Caturharjo Village, Pandak District, Bantul Regency",
-    "footer-contact": "CONTACT US",
-    "footer-address": "Jl. Tegalsempu,<br>Tegalsempu Hamlet, Caturharjo Village, Pandak District, Bantul Regency<br>Special Region of Yogyakarta, Indonesia, 55761."
-    "visi-title": "Vision",
-    "visi-text": "“The realization of Tegalsempu community that is healthy, orderly, prosperous, intelligent, cultured, and of noble character”",
-    "misi-title": "Mission",
-    "misi1": "Improving the health level of Tegalsempu Hamlet community",
-    "misi2": "Enhancing order and compliance of all residents and hamlet officials with existing regulations",
-    "misi3": "Increasing community welfare through optimization of creative economy centers and the initiation of tourism programs",
-    "misi4": "Improving education and skills of Tegalsempu residents",
-    "misi5": "Preserving customs, traditions, and culture of Tegalsempu community",
-    "misi6": "Strengthening the faith and piety of Tegalsempu residents"
-  }
-};
+    id: {
+      "nav-home": "Beranda",
+      "nav-profile": "Profil",
+      "nav-census": "Sensus",
+      "nav-docs": "Dokumentasi",
+      "footer-title": "PADUKUHAN TEGALSEMPU",
+      "footer-desc": "Website Resmi Pemerintah Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul",
+      "footer-contact": "HUBUNGI KAMI",
+      "footer-address": "Jl. Tegalsempu,<br>Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul<br>Provinsi DIY, Indonesia, 55761.",
+      "visi-title": "Visi",
+      "visi-text": "“Terwujudnya masyarakat Tegalsempu yang sehat, tertib,sejahtera, cerdas, berbudaya dan berakhlak mulia”",
+      "misi-title": "Misi",
+      "misi1": "Meningkatkan tingkat kesehatan masyarakat Padukuhan Tegalsempu",
+      "misi2": "Meningkatkan ketertiban dan kepatuhan seluruh warga dan perangkat Padukuhan Tegalsempu terhadap perundang-undangan yang berlaku",
+      "misi3": "Meningkatkan kesejahteraan warga Padukuhan Tegalsempu dengan optimalisasi sentra ekonomi kreatif dan perintisan dukuh wisata",
+      "misi4": "Meningkatkan tingkat pendidikan dan keterampilan warga Padukuhan Tegalsempu",
+      "misi5": "Melestarikan adat, tradisi dan budaya masyarakat Padukuhan Tegalsempu",
+      "misi6": "Meningkatkan iman dan taqwa warga Padukuhan Tegalsempu"
+    },
+    en: {
+      "nav-home": "Home",
+      "nav-profile": "Profile",
+      "nav-census": "Census",
+      "nav-docs": "Documentation",
+      "footer-title": "TEGALSEMPU HAMLET",
+      "footer-desc": "Official Website of Tegalsempu Hamlet,<br> Caturharjo Village, Pandak District, Bantul Regency",
+      "footer-contact": "CONTACT US",
+      "footer-address": "Jl. Tegalsempu,<br>Tegalsempu Hamlet, Caturharjo Village, Pandak District, Bantul Regency<br>Special Region of Yogyakarta, Indonesia, 55761.",
+      "visi-title": "Vision",
+      "visi-text": "“The realization of Tegalsempu community that is healthy, orderly, prosperous, intelligent, cultured, and of noble character”",
+      "misi-title": "Mission",
+      "misi1": "Improving the health level of Tegalsempu Hamlet community",
+      "misi2": "Enhancing order and compliance of all residents and hamlet officials with existing regulations",
+      "misi3": "Increasing community welfare through optimization of creative economy centers and the initiation of tourism programs",
+      "misi4": "Improving education and skills of Tegalsempu residents",
+      "misi5": "Preserving customs, traditions, and culture of Tegalsempu community",
+      "misi6": "Strengthening the faith and piety of Tegalsempu residents"
+    }
+  };
 
- // Toggle Bahasa
-    const langToggle = document.getElementById("langToggle");
-    let currentLang = "id";
-    langToggle.addEventListener("click", () => {
-      currentLang = currentLang === "id" ? "en" : "id";
-      for (const key in langData[currentLang]) {
-        const el = document.getElementById(key);
-        if (el) el.innerHTML = langData[currentLang][key];
-      }
-      langToggle.innerText = currentLang === "id" ? "EN" : "ID";
-    });
+  // Toggle Bahasa
+  const langToggle = document.getElementById("langToggle");
+  let currentLang = "id";
+  langToggle.addEventListener("click", () => {
+    currentLang = currentLang === "id" ? "en" : "id";
+    for (const key in langData[currentLang]) {
+      const el = document.getElementById(key);
+      if (el) el.innerHTML = langData[currentLang][key];
+    }
+    langToggle.innerText = currentLang === "id" ? "EN" : "ID";
+  });
 
-    // Toggle Dark Mode
-    const modeToggle = document.getElementById("modeToggle");
-    const body = document.getElementById("body");
-    modeToggle.addEventListener("click", () => {
-      body.classList.toggle("dark");
-      if (body.classList.contains("dark")) {
-        modeToggle.innerText = "☀️";
-        body.classList.replace("bg-gray-100", "bg-gray-900");
-      } else {
-        modeToggle.innerText = "🌙";
-        body.classList.replace("bg-gray-900", "bg-gray-100");
-      }
-    });
+  // Toggle Dark Mode
+  const modeToggle = document.getElementById("modeToggle");
+  const body = document.body; // gunakan langsung body
+  modeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    if (body.classList.contains("dark")) {
+      modeToggle.innerText = "☀️";
+    } else {
+      modeToggle.innerText = "🌙";
+    }
+  });
   </script>
 </body>
 </html>
+
 
 
