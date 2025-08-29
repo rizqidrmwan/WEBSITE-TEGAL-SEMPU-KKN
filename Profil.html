@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-<html lang="id" class="dark"> <!-- tambahkan class dark di html utk default dark mode -->
+<html lang="id" class="dark">
 <head>
   <meta charset="UTF-8">
   <title>Profil Dusun Tegalsempu</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html, body {
-      height: 100%;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-    main {
-      flex: 1;
-    }
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; }
+    main { flex: 1; }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
@@ -30,7 +23,6 @@
       <a href="Profil.html" class="hover:text-yellow-300 transition" id="nav-profile">Profil</a>
       <a href="Sensus.html" class="hover:text-yellow-300 transition" id="nav-census">Sensus</a>
       <a href="Dokumentasi.html" class="hover:text-yellow-300 transition" id="nav-docs">Dokumentasi</a>
-
       <!-- Tombol Bahasa & Mode -->
       <button id="langToggle" class="px-3 py-1 bg-yellow-400 text-black rounded-md hover:bg-yellow-500 transition">EN</button>
       <button id="modeToggle" class="px-3 py-1 bg-gray-800 text-white rounded-md hover:bg-gray-600 transition">🌙</button>
@@ -41,78 +33,34 @@
   <main>
     <!-- Sejarah Dusun -->
     <section class="p-6 bg-white dark:bg-gray-800 dark:text-gray-100 mt-4 shadow rounded max-w-4xl mx-auto">
-      <h2 class="text-xl font-bold mb-2">Sejarah Padukuhan</h2>
-      <p>
+      <h2 class="text-xl font-bold mb-2" id="sejarah-title">Sejarah Padukuhan</h2>
+      <p id="sejarah-text">
         Padukuhan Tegalsempu merupakan...
       </p>
     </section>
 
     <!-- Visi dan Misi -->
     <section class="p-6 bg-white dark:bg-gray-800 dark:text-gray-100 mt-4 shadow rounded max-w-4xl mx-auto">
-      <h2 class="text-xl font-bold mb-2">Visi</h2>
-      <p class="mb-4">
-        “Terwujudnya masyarakat Tegalsempu yang sehat, tertib,sejahtera, cerdas, berbudaya dan berakhlak mulia”
+      <h2 class="text-xl font-bold mb-2" id="visi-title">Visi</h2>
+      <p class="mb-4" id="visi-text">
+        “Terwujudnya masyarakat Tegalsempu yang sehat, tertib, sejahtera, cerdas, berbudaya dan berakhlak mulia”
       </p>
 
-      <h2 class="text-xl font-bold mb-2">Misi</h2>
+      <h2 class="text-xl font-bold mb-2" id="misi-title">Misi</h2>
       <ul class="list-disc pl-5">
-        <li>Meningkatkan tingkat kesehatan masyarakat Padukuhan Tegalsempu</li>
-        <li>Meningkatkan ketertiban dan kepatuhan seluruh warga dan perangkat Padukuhan Tegalsempu terhadap perundang-undangan yang berlaku</li>
-        <li>Meningkatkan kesejahteraan warga Padukuhan Tegalsempu dengan optimalisasi sentra ekonomi kreatif dan perintisan dukuh wisata</li>
-        <li>Meningkatkan tingkat pendidikan dan keterampilan warga Padukuhan Tegalsempu</li>
-        <li>Melestarikan adat, tradisi dan budaya masyarakat Padukuhan Tegalsempu</li>
-        <li>Meningkatkan iman dan taqwa warga Padukuhan Tegalsempu</li>
+        <li id="misi-1">Meningkatkan tingkat kesehatan masyarakat Padukuhan Tegalsempu</li>
+        <li id="misi-2">Meningkatkan ketertiban dan kepatuhan seluruh warga dan perangkat Padukuhan Tegalsempu terhadap perundang-undangan yang berlaku</li>
+        <li id="misi-3">Meningkatkan kesejahteraan warga Padukuhan Tegalsempu dengan optimalisasi sentra ekonomi kreatif dan perintisan dukuh wisata</li>
+        <li id="misi-4">Meningkatkan tingkat pendidikan dan keterampilan warga Padukuhan Tegalsempu</li>
+        <li id="misi-5">Melestarikan adat, tradisi dan budaya masyarakat Padukuhan Tegalsempu</li>
+        <li id="misi-6">Meningkatkan iman dan taqwa warga Padukuhan Tegalsempu</li>
       </ul>
-    </section>
-
-    <!-- Struktur Dusun -->
-    <section class="p-6 bg-white dark:bg-gray-800 dark:text-gray-100 mt-4 shadow rounded max-w-4xl mx-auto">
-      <h2 class="text-xl font-bold mb-4">Struktur Padukuhan</h2>
-      <div class="mb-6">
-        <h3 class="text-lg font-semibold">Kepala Padukuhan: Bapak Wartimin</h3>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4 shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-green-700 dark:text-green-300">RT 01</h4>
-          <p><span class="font-semibold">Ketua RT:</span> Bapak Supardal</p>
-          <p><span class="font-semibold">Jumlah KK:</span> 64</p>
-          <p><span class="font-semibold">Jumlah Penduduk:</span> 160</p>
-        </div>
-        <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4 shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-green-700 dark:text-green-300">RT 02</h4>
-          <p><span class="font-semibold">Ketua RT:</span> Bapak Sugito</p>
-          <p><span class="font-semibold">Jumlah KK:</span> 62</p>
-          <p><span class="font-semibold">Jumlah Penduduk:</span> 170</p>
-        </div>
-        <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4 shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-green-700 dark:text-green-300">RT 03</h4>
-          <p><span class="font-semibold">Ketua RT:</span> Bapak Suratijan</p>
-          <p><span class="font-semibold">Jumlah KK:</span> 55</p>
-          <p><span class="font-semibold">Jumlah Penduduk:</span> 144</p>
-        </div>
-        <div class="bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-lg p-4 shadow hover:shadow-lg transition">
-          <h4 class="text-lg font-bold text-green-700 dark:text-green-300">RT 04</h4>
-          <p><span class="font-semibold">Ketua RT:</span> Kemis Riyanto</p>
-          <p><span class="font-semibold">Jumlah KK:</span> 54</p>
-          <p><span class="font-semibold">Jumlah Penduduk:</span> 143</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Lokasi Dusun -->
-    <section class="p-6 bg-white dark:bg-gray-800 dark:text-gray-100 mt-4 shadow rounded max-w-4xl mx-auto">
-      <h1 class="text-2xl font-bold mb-4">Lokasi Dusun Tegalsempu</h1>
-      <p class="mb-4">Alamat: Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul, Provinsi Daerah Istimewa Yogyakarta.</p>
-      <iframe class="w-full h-96 rounded shadow"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.708967812689!2d114.360!3d-8.457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1234567890!2sTegal%20Sempu!5e0!3m2!1sen!2sid!4v0000000000"
-        allowfullscreen="" loading="lazy"></iframe>
     </section>
   </main>
 
   <!-- Footer -->
   <footer class="bg-green-800 text-white py-10">
     <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-start gap-6 px-6">
-      
       <!-- Kolom Kiri -->
       <div class="flex-1 min-w-[250px] text-center md:text-left">
         <a href="https://www.youtube.com/@tegalsemputv" target="_blank">
@@ -121,8 +69,7 @@
         <h3 class="text-xl font-bold" id="footer-title">PADUKUHAN TEGALSEMPU</h3>
         <p class="mt-2 text-sm" id="footer-desc">
           Website Resmi Pemerintah Padukuhan Tegalsempu,<br>
-          Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul<br>
-          Provinsi Daerah Istimewa Yogyakarta
+          Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul
         </p>
       </div>
 
@@ -152,6 +99,17 @@
       "nav-profile": "Profil",
       "nav-census": "Sensus",
       "nav-docs": "Dokumentasi",
+      "sejarah-title": "Sejarah Padukuhan",
+      "sejarah-text": "Padukuhan Tegalsempu merupakan...",
+      "visi-title": "Visi",
+      "visi-text": "“Terwujudnya masyarakat Tegalsempu yang sehat, tertib, sejahtera, cerdas, berbudaya dan berakhlak mulia”",
+      "misi-title": "Misi",
+      "misi-1": "Meningkatkan tingkat kesehatan masyarakat Padukuhan Tegalsempu",
+      "misi-2": "Meningkatkan ketertiban dan kepatuhan seluruh warga dan perangkat Padukuhan Tegalsempu terhadap perundang-undangan yang berlaku",
+      "misi-3": "Meningkatkan kesejahteraan warga Padukuhan Tegalsempu dengan optimalisasi sentra ekonomi kreatif dan perintisan dukuh wisata",
+      "misi-4": "Meningkatkan tingkat pendidikan dan keterampilan warga Padukuhan Tegalsempu",
+      "misi-5": "Melestarikan adat, tradisi dan budaya masyarakat Padukuhan Tegalsempu",
+      "misi-6": "Meningkatkan iman dan taqwa warga Padukuhan Tegalsempu",
       "footer-title": "PADUKUHAN TEGALSEMPU",
       "footer-desc": "Website Resmi Pemerintah Padukuhan Tegalsempu, Desa Caturharjo, Kecamatan Pandak, Kabupaten Bantul",
       "footer-contact": "HUBUNGI KAMI",
@@ -163,21 +121,23 @@
       "nav-profile": "Profile",
       "nav-census": "Census",
       "nav-docs": "Documentation",
+      "sejarah-title": "Hamlet History",
+      "sejarah-text": "Tegalsempu Hamlet is...",
+      "visi-title": "Vision",
+      "visi-text": "“The realization of Tegalsempu community that is healthy, orderly, prosperous, intelligent, cultured, and virtuous”",
+      "misi-title": "Mission",
+      "misi-1": "Improve the health level of the Tegalsempu community",
+      "misi-2": "Increase order and compliance of all residents and officials with applicable regulations",
+      "misi-3": "Enhance community welfare through creative economy centers and village tourism initiatives",
+      "misi-4": "Improve the education and skills of Tegalsempu residents",
+      "misi-5": "Preserve the customs, traditions, and culture of Tegalsempu community",
+      "misi-6": "Strengthen the faith and piety of Tegalsempu residents",
       "footer-title": "TEGALSEMPU HAMLET",
       "footer-desc": "Official Website of Tegalsempu Hamlet Government, Caturharjo Village, Pandak District, Bantul Regency",
       "footer-contact": "CONTACT US",
       "footer-address": "Jl. Kayumas No. 005 Kp. Krajan RT 03 RW 03 Ketowan, Tegalsempu Hamlet, Caturharjo Village, Pandak District, Bantul Regency, Yogyakarta, Indonesia, 55761."
     }
   };
-
-  // Toggle Program Menu
-  const btn = document.getElementById('programBtn');
-  const menu = document.getElementById('programMenu');
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menu.classList.toggle('hidden');
-  });
-  window.addEventListener('click', () => menu.classList.add('hidden'));
 
   // Language Toggle
   const langToggle = document.getElementById("langToggle");
@@ -193,8 +153,6 @@
 
   // Dark Mode Toggle with localStorage
   const modeToggle = document.getElementById("modeToggle");
-
-  // Cek preferensi awal
   if (localStorage.getItem("theme") === "dark") {
     document.documentElement.classList.add("dark");
     modeToggle.innerText = "☀️";
@@ -202,11 +160,8 @@
     document.documentElement.classList.remove("dark");
     modeToggle.innerText = "🌙";
   }
-
-  // Klik tombol toggle
   modeToggle.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark");
-
     if (document.documentElement.classList.contains("dark")) {
       localStorage.setItem("theme", "dark");
       modeToggle.innerText = "☀️";
@@ -215,13 +170,6 @@
       modeToggle.innerText = "🌙";
     }
   });
-</script>
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
